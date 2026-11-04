@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Velora – Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3e4db;--card:#f8ede6;--ink:#4b4242;--mut:#8c7b76;--ac:#7b5a55;--line:#d8c2b8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:light}}
+:root[data-theme="dark"]{--bg:#241917;--card:#2f2220;--ink:#f1e3dc;--mut:#b99d94;--ac:#d3a99d;--line:#4a3835;color-scheme:dark}
+html{scroll-padding-top:12px;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo','Segoe UI',Tahoma,sans-serif}
+header{text-align:center;padding:22px 16px 8px}
+.brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;letter-spacing:.35em;color:var(--ac);margin:4px 0 0;padding-inline-start:.35em}
+.tag{font-family:'Cormorant Garamond',Georgia,serif;font-size:12px;letter-spacing:.3em;color:var(--mut);text-transform:uppercase;display:flex;align-items:center;gap:10px;justify-content:center}
+.tag:before,.tag:after{content:"";width:34px;height:1px;background:var(--line)}
+h1{font-size:21px;font-weight:700;margin:18px 0 12px;color:var(--ink)}
+.langs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.langs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:6px 14px;font:600 13px inherit;font-family:inherit;cursor:pointer}
+.langs button.on{background:var(--ac);color:var(--bg);border-color:var(--ac)}.langs button{border-radius:8px}.tabs a{border-radius:8px}
+.bar{position:static;background:var(--bg);padding:8px 10px;border-bottom:1px solid var(--line)}
+.tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tabs a{text-align:center;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:18px;font-size:13px;font-weight:600}
+.tabs a.on{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+#q{width:100%;margin-top:8px;padding:9px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:14px}
+main{max-width:640px;margin:0 auto;padding:6px 14px 40px}
+section{margin-top:22px}
+h2{font-size:22px;font-weight:700;color:var(--ink);margin:0 0 6px;padding-bottom:8px;border-bottom:1.5px solid var(--ac)}
+h2 small{font-size:11px;color:var(--mut);font-weight:600}
+.cols{display:flex;justify-content:flex-end;gap:8px;font-size:11px;font-weight:700;padding:6px 0 2px}
+.cols span{min-width:60px;text-align:center;background:var(--ac);color:var(--bg);border-radius:10px;padding:2px 0}.pr span{min-width:60px;text-align:center}
+.card{padding:0}
+.it{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.it:last-child{border:0}
+.nm{font-size:15px;font-weight:600}
+.pr{display:flex;gap:8px;font-weight:700;color:var(--ac);font-size:15px}
+.pr .no{color:var(--mut);font-weight:400}
+.cur{color:var(--mut);font-size:11px;font-weight:600;margin-inline-start:2px}
+.empty{text-align:center;color:var(--mut);padding:30px 0;display:none}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:10px 16px 28px}
+</style>
+</head>
+<body>
+<header>
+<svg width="84" height="96" viewBox="0 0 84 96" fill="none" stroke="var(--ac)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-label="Velora logo">
+<path d="M6 8h26l10 54L52 8h26M32 8 42 80 52 8" stroke-width="0"/>
+<path d="M8 10h22l12 66L54 10h22"/>
+<path d="M30 10l12 66 12-66" stroke-width="1.2" opacity=".5"/>
+<path d="M18 40c6-12 14-20 26-26" stroke-width="1.6"/>
+<path d="M26 28c-10-2-14-8-14-14 8 0 14 4 14 14zM38 20c-6-8-4-14 0-18 6 4 6 12 0 18z" fill="var(--ac)" fill-opacity=".25" stroke-width="1.4"/>
+<ellipse cx="60" cy="26" rx="5" ry="7" transform="rotate(25 60 26)" fill="var(--ac)" fill-opacity=".35" stroke-width="1.4"/>
+<ellipse cx="68" cy="40" rx="5" ry="7" transform="rotate(-20 68 40)" fill="var(--ac)" fill-opacity=".35" stroke-width="1.4"/>
+<ellipse cx="54" cy="44" rx="5" ry="7" transform="rotate(10 54 44)" fill="var(--ac)" fill-opacity=".35" stroke-width="1.4"/>
+</svg>
+<div class="brand">VELORA</div>
+<div class="tag">Elegantly Crafted</div>
+<h1 id="ttl"></h1>
+<div class="langs" id="langs"></div>
+</header>
+<div class="bar"><div class="tabs" id="tabs"></div><input id="q" type="search"></div>
+<main id="menu"></main>
+<div class="empty" id="empty"></div>
+
+<script>
+const L=['ar','en','it','fr'],LN={ar:'العربية',en:'English',it:'Italiano',fr:'Français'};
+const UI={
+ar:{t:'قائمة المشروبات',s:'ابحث عن مشروب…',c:'ج.م',e:'لا توجد نتائج',f:'الأسعار بالجنيه المصري'},
+en:{t:'Drinks Menu',s:'Search drinks…',c:'EGP',e:'No results',f:'Prices in Egyptian pounds'},
+it:{t:'Menu delle Bevande',s:'Cerca una bevanda…',c:'EGP',e:'Nessun risultato',f:'Prezzi in sterline egiziane'},
+fr:{t:'Carte des Boissons',s:'Rechercher une boisson…',c:'EGP',e:'Aucun résultat',f:'Prix en livres égyptiennes'}};
+const SZ={oz8:{ar:'٨ أونز',en:'8 oz',it:'8 oz',fr:'8 oz'},oz12:{ar:'١٢ أونز',en:'12 oz',it:'12 oz',fr:'12 oz'},oz16:{ar:'١٦ أونز',en:'16 oz',it:'16 oz',fr:'16 oz'},
+sg:{ar:'سنجل',en:'Single',it:'Singolo',fr:'Simple'},db:{ar:'دبل',en:'Double',it:'Doppio',fr:'Double'}};
+const C=[
+{id:'esp',n:['مشروبات الإسبريسو','Espresso Drinks','Bevande all’Espresso','Boissons Espresso'],z:['oz8','oz12'],i:[
+[['إسبريسو ماكياتو','Espresso Macchiato','Espresso Macchiato','Espresso Macchiato'],[80,0]],
+[['كورتادو','Cortado','Cortado','Cortado'],[120,0]],
+[['فلت وايت','Flat White','Flat White','Flat White'],[120,0]],
+[['كريم دبل شوت','Cream Double Shot','Doppio alla Crema','Double Shot Crémeux'],[120,150]],
+[['سبانيش لاتيه','Spanish Latte','Latte Spagnolo','Latte Espagnol'],[130,150]],
+[['كراميل نت ماكياتو','Caramel Nut Macchiato','Macchiato Caramello e Noci','Macchiato Caramel Noisette'],[130,150]],
+[['لاتيه','Latte','Caffè Latte','Café Latte'],[0,120]],
+[['كابتشينو','Cappuccino','Cappuccino','Cappuccino'],[0,120]],
+[['أمريكانو','Americano','Americano','Americano'],[0,100]],
+[['موكا','Mocha','Moka','Moka'],[0,130]],
+[['وايت موكا','White Mocha','Moka Bianca','Moka Blanc'],[0,130]]]},
+{id:'frp',n:['فرابيه القهوة','Coffee Frappé','Frappè al Caffè','Frappé au Café'],z:['oz16'],i:[
+[['سبانيش كوفي فرابيه','Spanish Coffee Frappé','Frappè Caffè Spagnolo','Frappé Café Espagnol'],[150]],
+[['فرابيه إسبريسو','Espresso Frappé','Frappè Espresso','Frappé Espresso'],[140]],
+[['فرابيه قهوة فانيلا','Vanilla Coffee Frappé','Frappè Caffè alla Vaniglia','Frappé Café Vanille'],[150]],
+[['فرابيه قهوة كراميل','Caramel Coffee Frappé','Frappè Caffè al Caramello','Frappé Café Caramel'],[150]],
+[['فرابيه موكا','Mocha Frappé','Frappè Moka','Frappé Moka'],[150]],
+[['فرابيه وايت موكا','White Mocha Frappé','Frappè Moka Bianca','Frappé Moka Blanc'],[150]]]},
+{id:'ice',n:['قهوة مثلجة','Iced Coffee','Caffè Freddo','Cafés Glacés'],z:['oz16'],i:[
+[['كريم دبل شوت مثلج','Iced Cream Double Shot','Doppio alla Crema Freddo','Double Shot Crémeux Glacé'],[150]],
+[['سبانيش لاتيه مثلج','Iced Spanish Latte','Latte Spagnolo Freddo','Latte Espagnol Glacé'],[150]],
+[['كراميل نت ماكياتو مثلج','Iced Caramel Nut Macchiato','Macchiato Caramello e Noci Freddo','Macchiato Caramel Noisette Glacé'],[150]],
+[['لاتيه مثلج','Iced Latte','Caffè Latte Freddo','Café Latte Glacé'],[130]],
+[['أمريكانو مثلج','Iced Americano','Americano Freddo','Americano Glacé'],[120]],
+[['موكا مثلجة','Iced Mocha','Moka Fredda','Moka Glacé'],[150]],
+[['وايت موكا مثلجة','Iced White Mocha','Moka Bianca Fredda','Moka Blanc Glacé'],[150]]]},
+{id:'tur',n:['قهوة تركي','Turkish Coffee','Caffè Turco','Café Turc'],z:['sg','db'],i:[
+[['قهوة تركية سادة / محوجة','Turkish Coffee – Plain / Spiced','Caffè Turco – Semplice / Speziato','Café Turc – Nature / Épicé'],[50,100]]]},
+{id:'hot',n:['مشروبات بدون قهوة','Non-Coffee Hot Drinks','Bevande Calde senza Caffè','Boissons Chaudes sans Café'],z:['oz8','oz12'],i:[
+[['هوت شوكليت','Hot Chocolate','Cioccolata Calda','Chocolat Chaud'],[100,130]],
+[['شاي','Tea','Tè','Thé'],[35,0]],
+[['شاي أخضر','Green Tea','Tè Verde','Thé Vert'],[45,0]],
+[['شاي فواكه','Fruit Tea','Tè alla Frutta','Thé aux Fruits'],[50,0]],
+[['يانسون','Anise','Anice','Anis'],[40,0]],
+[['قرفة تفاح','Apple Cinnamon','Mela e Cannella','Pomme Cannelle'],[70,0]]]},
+{id:'cold',n:['مشروبات باردة بدون قهوة','Non-Coffee Cold Drinks','Bevande Fredde senza Caffè','Boissons Froides sans Café'],z:['oz16'],i:[
+[['مانجو باشون فروت','Mango Passion Fruit','Mango e Frutto della Passione','Mangue Fruit de la Passion'],[150]],
+[['فرابيه كراميل','Caramel Frappé','Frappè al Caramello','Frappé Caramel'],[150]],
+[['فرابيه باشون فروت','Passion Fruit Frappé','Frappè al Frutto della Passione','Frappé Fruit de la Passion'],[150]],
+[['شوكلاتة مثلجة','Iced Chocolate','Cioccolata Fredda','Chocolat Glacé'],[150]],
+[['فرابيه شوكلاتة','Chocolate Frappé','Frappè al Cioccolato','Frappé Chocolat'],[150]],
+[['موهيتو باشون فروت','Passion Fruit Mojito','Mojito al Frutto della Passione','Mojito Fruit de la Passion'],[150]],
+[['موهيتو بطيخ','Watermelon Mojito','Mojito all’Anguria','Mojito Pastèque'],[160]]]},
+{id:'bev',n:['مشروبات بارده','Soft Drinks','Bibite Fredde','Boissons Fraîches'],z:[''],i:[
+[['ريد بول','Red Bull','Red Bull','Red Bull'],[100]],
+[['بيبسي','Pepsi','Pepsi','Pepsi'],[50]],
+[['مياه فوراه','Sparkling Water','Acqua Frizzante','Eau Pétillante'],[50]],
+[['مياه','Water','Acqua','Eau'],[20]]]},
+{id:'add',n:['اجعله مشروبك الخاص','Make It Your Own','Personalizza la Tua Bevanda','Personnalisez Votre Boisson'],z:[''],i:[
+[['تغيير إلى بدائل الألبان (لوز – جوز الهند – شوفان)','Switch to plant milk (almond – coconut – oat)','Latte vegetale (mandorla – cocco – avena)','Lait végétal (amande – coco – avoine)'],[50]],
+[['جرعة إسبريسو','Espresso shot','Shot di espresso','Shot d’espresso'],[30]],
+[['إضافة حليب','Add milk','Aggiunta di latte','Ajout de lait'],[25]],
+[['إضافة حليب مكثف','Add condensed milk','Aggiunta di latte condensato','Ajout de lait concentré'],[35]],
+[['إضافة نكهة','Add flavor','Aggiunta di aroma','Ajout d’arôme'],[25]],
+[['إضافة كريمة مخفوقة','Add whipped cream','Aggiunta di panna montata','Ajout de crème fouettée'],[30]]]}
+];
+let lg=localStorage.getItem('vl')||'ar';
+try{lg=localStorage.getItem('vl')||'ar'}catch(e){lg='ar'}
+const $=id=>document.getElementById(id);
+const num=n=>lg==='ar'?n.toLocaleString('ar-EG'):String(n);
+function render(){
+ const u=UI[lg],q=$('q').value.trim().toLowerCase();
+ document.documentElement.lang=lg;document.documentElement.dir=lg==='ar'?'rtl':'ltr';
+ $('ttl').textContent=u.t;$('q').placeholder=u.s;$('empty').textContent=u.e;
+ $('langs').innerHTML=L.map(l=>`<button class="${l===lg?'on':''}" data-l="${l}">${LN[l]}</button>`).join('');
+ const k=L.indexOf(lg);let out='',tabs='',any=false;
+ C.forEach(c=>{
+  const its=c.i.filter(x=>!q||x[0].some(s=>s.toLowerCase().includes(q)));
+  if(!its.length)return;any=true;
+  tabs+=`<a href="#${c.id}" data-id="${c.id}">${c.n[k]}</a>`;
+  const hd=c.z[0]?`<div class="cols">${c.z.map(z=>`<span>${SZ[z][lg]}</span>`).join('')}</div>`:'';
+  out+=`<section id="${c.id}"><h2>${c.n[k]}</h2>${hd}<div class="card">`+its.map(x=>
+   `<div class="it"><div class="nm">${x[0][k]}</div><div class="pr">${x[1].map(p=>p?`<span>${num(p)}<span class="cur">${u.c}</span></span>`:`<span class="no">–</span>`).join('')}</div></div>`).join('')+`</div></section>`;
+ });
+ $('menu').innerHTML=out;$('tabs').innerHTML=tabs;$('empty').style.display=any?'none':'block';
+}
+$('langs').addEventListener('click',e=>{const l=e.target.dataset.l;if(l){lg=l;try{localStorage.setItem('vl',l)}catch(x){}render()}});
+$('q').addEventListener('input',render);
+addEventListener('scroll',()=>{let cur='';document.querySelectorAll('section').forEach(s=>{if(s.getBoundingClientRect().top<150)cur=s.id});
+ document.querySelectorAll('.tabs a').forEach(a=>a.classList.toggle('on',a.dataset.id===cur))},{passive:true});
+render();
+</script>
+</body>
+</html>
